@@ -19,9 +19,9 @@ public class Individual {
         this.chromosome = new ArrayList(chromosomeLength);
         for (int gene = 0; gene < chromosomeLength; gene++) {
             if (0.5 < Math.random()) {
-                this.setGene(gene, 1);
+                this.addGene(gene, 1);
             } else {
-                this.setGene(gene, 0);
+                this.addGene(gene, 0);
             }
         }
     }
@@ -34,8 +34,12 @@ public class Individual {
         return this.chromosome.size();
     }
 
-    public void setGene(int offset, int gene) {
+    public void addGene(int offset, int gene) {
         this.chromosome.add(offset, gene);
+    }
+
+    public void setGene(int offset, int gene) {
+        this.chromosome.set(offset, gene);
     }
 
     public int getGene(int offset) {
@@ -50,7 +54,15 @@ public class Individual {
         return this.fitness;
     }
 
+    public double calcFitness() {
+        // Track number of correct genes
+        long correctGenes = this.chromosome.stream().filter(gene -> gene == 1).count();
+        this.fitness = (double) correctGenes / getChromosomeLength();
+        return fitness;
+    }
+
     public String toString() {
         return this.chromosome.stream().map(i -> i.toString()).collect(Collectors.joining(""));
     }
+
 }
