@@ -21,6 +21,14 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.processing/core -->
+    <dependency>
+      <groupId>org.processing</groupId>
+      <artifactId>core</artifactId>
+      <version>3.2.3</version>
+    </dependency>
+
   </dependencies>
 
   <build>
