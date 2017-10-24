@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 std::vector<int> get_prefix_table(const std::string& str) {
     std::vector<int> prefix_table(str.size());

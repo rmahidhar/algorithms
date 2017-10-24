@@ -6,6 +6,7 @@
 #include <vector>
 #include <functional>
 #include <iostream>
+#include <algorithm>
 
 
 template<class T>

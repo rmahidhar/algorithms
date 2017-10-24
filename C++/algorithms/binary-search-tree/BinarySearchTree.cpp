@@ -9,6 +9,7 @@
 #include <map>
 #include <queue>
 #include <list>
+#include <algorithm>
 
 template<typename T>
 class BinarySearchTree {

@@ -5,4 +5,7 @@ add_subdirectory(subset)
 add_subdirectory(binary-search-tree)
 add_subdirectory(segment-tree)
 add_subdirectory(prefix-match)
+add_subdirectory(coin-counting)
+add_subdirectory(subset-sum)
+add_subdirectory(knapsack)
 

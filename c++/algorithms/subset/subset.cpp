@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 
-void subset(const std::string& str, std::string substr, int i, int len) {
+void subset(const std::string& str, const std::string& substr, int i, unsigned int len) {
 
     if (i == len) {
         std::cout << substr << std::endl;
