@@ -1,11 +1,10 @@
 cmake_minimum_required(VERSION 3.7)
 
-add_subdirectory(sub-array-sum)
-add_subdirectory(subset)
+add_subdirectory(recursion)
 add_subdirectory(binary-search-tree)
 add_subdirectory(segment-tree)
-add_subdirectory(prefix-match)
-add_subdirectory(coin-counting)
-add_subdirectory(subset-sum)
-add_subdirectory(knapsack)
-
+add_subdirectory(dynamic-programming)
+add_subdirectory(kalman-filter)
+add_subdirectory(strings)
+add_subdirectory(greedy-algorithms)
+add_subdirectory(sliding-window)

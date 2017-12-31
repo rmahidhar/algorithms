@@ -210,6 +210,43 @@ public:
         }
     }
 
+    std::vector<int> maxSum(TreeNode *node) {
+
+    }
+
+    std::pair<std::vector<int>, int> maxSum(TreeNode *node, std::pair< std::vector<int>, int > sumPair) {
+        if (node == nullptr) {
+            return std::make_pair(std::vector<int>(), 0);
+        }
+
+        std::pair< std::vector<int>, int > lsumPair = std::make_pair(std::vector<int>(), 0);
+        std::pair< std::vector<int>, int > rsumPair = std::make_pair(std::vector<int>(), 0);
+
+        std::pair<std::vector<int>, int> lsumMaxPair = maxSum(node->left, lsumPair);
+        std::pair<std::vector<int>, int> rsumMaxPair = maxSum(node->left, rsumPair);
+
+        int sum = lsumMaxPair.second + rsumMaxPair.second + node->data;
+
+        if (sum > node->data && sum > lsumMaxPair.second && sum > rsumMaxPair.second) {
+            std::vector<int> v(lsumMaxPair.first.size() + 1 + rsumMaxPair.first.size());
+            std::for_each(lsumMaxPair.first.begin(), lsumMaxPair.first.end(), [&](auto item) {v.push_back(item);});
+            v.push_back(node->data);
+            std::for_each(rsumMaxPair.first.rbegin(), lsumMaxPair.first.rend(), [&](auto item) {v.push_back(item);});
+            return make_pair(v, sum);
+        }
+
+        if (node->data > lsumMaxPair.second && node->data > rsumMaxPair.second) {
+            std::vector<int> v(1, sum);
+            return make_pair(std::vector<int>(1, node->data), (int)node->data);
+        }
+
+        if (lsumMaxPair.second > rsumMaxPair.second) {
+            return lsumMaxPair;
+        } else {
+            return rsumMaxPair;
+        }
+    }
+
 private:
 
     bool isBalanced(TreeNode* node, int& height) {
