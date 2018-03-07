@@ -11,6 +11,9 @@
 #include <list>
 #include <algorithm>
 
+
+//Next challenges: Validate Binary Search Tree Binary Tree Preorder Traversal Binary Search Tree Iterator Kth Smallest Element in a BST Closest Binary Search Tree Value II Inorder Successor in BST
+
 template<typename T>
 class BinarySearchTree {
 public:
