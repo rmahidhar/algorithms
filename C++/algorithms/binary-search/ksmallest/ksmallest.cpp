@@ -39,9 +39,9 @@ int ksmallest(int k, std::vector<int>& nums1, std::vector<int>& nums2) {
 }
 
 int main(int argc, char** argv) {
-    std::vector<int> v1 = {1, 2};
-    std::vector<int> v2 = {3, 4};
-    int k = 4;
+    std::vector<int> v1 = {10, 20};
+    std::vector<int> v2 = {30, 40};
+    int k = 5;
     int ksmall = ksmallest(k, v1, v2);
     std::cout << "ksmallest:" << ksmall << std::endl;
 }
